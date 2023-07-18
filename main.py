@@ -9,7 +9,7 @@ intents = discord.Intents.default()
 intents.message_content = True
 intents.messages = True
 
-description = "Helen Bot - https://github.com/0ak0/RentReminderBot"
+description = "Helen Bot - https://github.com/0ak0/RentReminderDiscordBot"
 
 #client = discord.Client(intents=intents)
 bot = commands.Bot(command_prefix="h!", intents=intents, description=description)
@@ -67,7 +67,7 @@ async def warn(ctx, *args):
 
 @bot.command(description='View Github Link')
 async def git(ctx):
-     ctx.send("Make a pr on https://github.com/0ak0/RentReminderBot")
+     ctx.send("Make a pr on https://github.com/0ak0/RentReminderDiscordBot")
 
 class dateChecker(commands.Cog):
     def __init__(self, bot):
