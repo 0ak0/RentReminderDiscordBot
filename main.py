@@ -26,7 +26,7 @@ async def on_ready():
     await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="h!help"))
     await bot.add_cog(dateChecker(bot))
 
-@bot.command()
+@bot.command(description='Days until rent')
 async def days(ctx):
     today = datetime.now()
     daysInMonth = calendar.monthrange(today.year, today.month)[1]
@@ -34,7 +34,7 @@ async def days(ctx):
 
     await ctx.send("Rent is due in " + str(daysLeft) + " days.")
 
-@bot.command()
+@bot.command(description='Check the warning set or reset it')
 async def warn(ctx, *args):
     if len(args) == 1:
         if int(args[0]) > 0 and int(args[0]) < 31:
@@ -65,7 +65,7 @@ async def warn(ctx, *args):
             x.close
         await ctx.send("I will warn you " + warnDays + " days before rent is due.")
 
-@bot.command()
+@bot.command(description='View Github Link')
 async def git(ctx):
      ctx.send("Make a pr on https://github.com/0ak0/RentReminderBot")
 
