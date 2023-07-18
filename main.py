@@ -100,13 +100,8 @@ class dateChecker(commands.Cog):
         todayInt = int(today.day)
         print("Today is: " + todayStr)
         print("Warn Check is set to " + str(warnDays) + " days before the 1st.")
-        print("Warning on: " + str(dayToWarn))
-        if todayInt == 19:
-                print("Check Success!")
-                print("It works. NOW REMOVE THIS SO YOU DONT GET PINGED AGAIN")
-                mentionOak = "<@437331685231820812>"
-                await channel.send(f"IT WORKS {mentionOak}")  
-        elif todayInt == 1:
+        print("Warning on: " + str(dayToWarn)) 
+        if todayInt == 1:
                 print("Check Success!")
                 print("Rent Check")
                 mentionBoys = "<@1030961835588984922>"
