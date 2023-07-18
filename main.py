@@ -67,7 +67,7 @@ async def warn(ctx, *args):
 
 @bot.command(description='View Github Link')
 async def git(ctx):
-     ctx.send("Make a pr on https://github.com/0ak0/RentReminderDiscordBot")
+     await ctx.send("Make a pr on https://github.com/0ak0/RentReminderDiscordBot")
 
 class dateChecker(commands.Cog):
     def __init__(self, bot):
