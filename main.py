@@ -104,7 +104,7 @@ class dateChecker(commands.Cog):
         print("Warn Check is set to " + str(warnDays) + " days before the 1st.")
         print("Warning on: " + str(dayToWarn))
         print("Time Check: " + timeStr)
-        if timeInt > 1159 or timeInt < 1301:
+        if timeInt > 1159 and timeInt < 1301:
             print("Time Check Passed (11:59 - 13:01)")
             if todayInt == 1:
                     print("Check Success!")
