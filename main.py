@@ -98,21 +98,28 @@ class dateChecker(commands.Cog):
         print("\nRunning Loop")
         todayStr = str(today.day)
         todayInt = int(today.day)
+        timeStr = str(today.hour) + str(today.minute)
+        timeInt = int(timeStr)
         print("Today is: " + todayStr)
         print("Warn Check is set to " + str(warnDays) + " days before the 1st.")
-        print("Warning on: " + str(dayToWarn)) 
-        if todayInt == 1:
-                print("Check Success!")
-                print("Rent Check")
-                mentionBoys = "<@1030961835588984922>"
-                await channel.send(f"# RENT DUE - TODAY IS THE FIRST OF THE MONTH! {mentionBoys}")
-        elif todayInt == dayToWarnInt:
-                print("Check Success!")
-                print("Warn Check")
-                mentionBoys = "<@1030961835588984922>"
-                await channel.send(f"### RENT REMINDER - " + str(warnDays) + " DAYS LEFT {mentionBoys}")
+        print("Warning on: " + str(dayToWarn))
+        print("Time Check: " + timeStr)
+        if timeInt > 1159 or timeInt < 1301:
+            print("Time Check Passed (11:59 - 13:01)")
+            if todayInt == 1:
+                    print("Check Success!")
+                    print("Rent Check")
+                    mentionBoys = "<@1030961835588984922>"
+                    await channel.send(f"# RENT DUE - TODAY IS THE FIRST OF THE MONTH! {mentionBoys}")
+            elif todayInt == dayToWarnInt:
+                    print("Check Success!")
+                    print("Warn Check")
+                    mentionBoys = "<@1030961835588984922>"
+                    await channel.send(f"### RENT REMINDER - " + str(warnDays) + " DAYS LEFT {mentionBoys}")
+            else:
+                    print("No need to send a message.")
         else:
-                print("No need to send a message.")
+             print("Time Check Failed")
 
 
 with open("token") as x:
