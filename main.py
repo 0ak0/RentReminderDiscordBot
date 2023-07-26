@@ -98,7 +98,10 @@ class dateChecker(commands.Cog):
         print("\nRunning Loop")
         todayStr = str(today.day)
         todayInt = int(today.day)
-        timeStr = str(today.hour) + str(today.minute)
+        minute = today.minute
+        if minute < 10:
+             minute = "0" + str(minute)
+        timeStr = str(today.hour) + str(minute)
         timeInt = int(timeStr)
         print("Today is: " + todayStr)
         print("Warn Check is set to " + str(warnDays) + " days before the 1st.")
